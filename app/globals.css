@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  :root {
+    /* Neon Theme Variables */
+    --background: 224 71% 4%;
+    --foreground: 210 40% 98%;
+
+    --primary: 195 100% 50%; /* Neon Blue */
+    --primary-foreground: 224 71% 4%;
+
+    --card: 224 71% 4%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 210 40% 98%;
+
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 217 33% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 195 100% 50%; /* Neon Blue for focus */
+
+    --chart-1: 195 100% 50%;
+    --chart-2: 180 100% 40%;
+    --chart-3: 210 100% 30%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+
+    /* Spacing variables */
+    --inset: min(2vw, 1.5rem);
+    --sides: 1rem;
+    --footer-safe-area: calc(var(--inset) * 2 + 1.5rem + theme('spacing.9'));
+  }
+}
+
+/* Removed the prefers-color-scheme: dark media query as dark is now default */
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(200%);
+    opacity: 0;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
